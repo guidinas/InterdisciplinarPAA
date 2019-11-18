@@ -5,12 +5,17 @@ import java.util.LinkedList;
 
 public class Grafo {
        
-    static final int V = 8;   
+    private int vertices;
+
+    public Grafo(int vertice) {
+        this.vertices = vertice;
+    }
+    
     boolean bfs(int[][] matrizAdj, int s, int t, int[] vizinho) 
     { 
         
-        boolean[] visitados = new boolean[V]; 
-        for(int i=0; i<V; ++i) 
+        boolean[] visitados = new boolean[vertices]; 
+        for(int i=0; i<vertices; ++i) 
             visitados[i]=false; 
   
         
@@ -24,7 +29,7 @@ public class Grafo {
         { 
             int u = filaPrioridade.poll(); 
   
-            for (int v=0; v<V; v++) 
+            for (int v=0; v<vertices; v++) 
             { 
                 if (visitados[v]==false && matrizAdj[u][v] > 0) 
                 { 
@@ -45,14 +50,14 @@ public class Grafo {
         int u, v; 
   
         
-        int[][] mGrafo = new int[V][V]; 
+        int[][] mGrafo = new int[vertices][vertices]; 
   
-        for (u = 0; u < V; u++) 
-            for (v = 0; v < V; v++) 
+        for (u = 0; u < vertices; u++) 
+            for (v = 0; v < vertices; v++) 
                 mGrafo[u][v] = grafo[u][v]; 
   
         
-        int[] pai = new int[V]; 
+        int[] pai = new int[vertices]; 
   
         int fluxoMaximo = 0;  
         

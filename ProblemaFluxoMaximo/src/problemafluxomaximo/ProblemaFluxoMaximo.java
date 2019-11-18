@@ -38,7 +38,7 @@ public class ProblemaFluxoMaximo {
             {0,0,0,0,0,26,0,0},
             {0,0,0,0,0,0,22,0} 
                                    }; 
-        Grafo m = new Grafo(); 
+        Grafo m = new Grafo(8); 
   
         System.out.println("The maximum possible flow is " +m.fordFulkerson(graph, 0, 7)); 
   
