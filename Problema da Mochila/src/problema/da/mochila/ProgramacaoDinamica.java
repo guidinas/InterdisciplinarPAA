@@ -35,11 +35,22 @@ public class ProgramacaoDinamica {
         }
         int[] x = new int[quantidadeItens + 1];
         int[] itensMochila = solucao(x, quantidadeItens, capacidadeMochila);
-
+/*
         for (int i = 0; i < x.length; i++) {
             System.out.print(itensMochila[i] + " ");
         }
         System.out.println("");
+        */
+        
+        System.out.print("Itens na mochila: ");
+        for (int i = 0; i < itensMochila.length; i++) {
+            if (itensMochila[i] != 0 && i < itensMochila.length-1){
+                System.out.print((i) + ", ");
+            } else if (itensMochila[i] != 0){
+                System.out.println(i);
+            }
+        }
+        System.out.println();
     }
 
     public static int maxNumero(int a, int b) {
